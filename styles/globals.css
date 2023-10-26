@@ -40,5 +40,15 @@ body {
 }
 
 .text-block-small{
-  width: 100px;
+  width: 200px;
+  margin: 30px;
+}
+
+img{
+  margin: 20px;
+}
+
+#greeting {
+display: flex;
+justify-content: flex-end;
 }
