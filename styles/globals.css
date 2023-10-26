@@ -18,5 +18,27 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: whitesmoke;
+}
+
+#greeting{
+  margin: 15px;
+}
+
+#page-top{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#page-bottom{
+  display: flex;
+  margin-top: 40px;
+}
+
+.text-block{
+  width: 500px;
+}
+
+.text-block-small{
+  width: 100px;
 }
