@@ -4,7 +4,6 @@ import { useAuth } from '../utils/context/authContext';
 
 function Home() {
   const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
-
   return (
     <div id="home">
       <h4 id="greeting">Hello {user.displayName}! </h4>
