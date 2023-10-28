@@ -70,3 +70,8 @@ justify-content: flex-end;
   margin-right: 2px;
   text-align: center;
 }
+
+#mentor-container{
+  display: flex;
+  
+}
