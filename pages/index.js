@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import meeting from '../public/assets/meeting.jpg';
+import meeting from '../public/meeting.jpg';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
