@@ -2,8 +2,8 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-const getCategories = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/categories`, {
+const getMentorCategories = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/mentor/categories`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -19,4 +19,4 @@ const getCategories = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default getCategories;
+export default getMentorCategories;
