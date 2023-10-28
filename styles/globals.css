@@ -52,3 +52,21 @@ img{
 display: flex;
 justify-content: flex-end;
 }
+
+#profile {
+  padding-top: 30px;
+  height: 340px;
+  width: 345px;
+}
+
+#apts {
+  width: 345px;
+  height: 450px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#clock {
+  margin-right: 2px;
+  text-align: center;
+}
