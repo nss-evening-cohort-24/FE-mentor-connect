@@ -18,11 +18,10 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
 
   useEffect(() => {
     checkUser(user.uid).then((data) => {
-      console.log('USER DATA: ', data);
-      setUser(userData);
+      setUser(data);
     });
     if (appointmentObj.appointmentId) setFormInput(appointmentObj);
-  }, [appointmentObj, user, userData]);
+  }, [appointmentObj, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,9 +35,9 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
     if (appointmentObj.appointmentId) {
       updateAppointment(formInput).then(() => router.push('/profile'));
     } else {
-      const payload = { ...formInput, userId: userData.userId };
+      const payload = { ...formInput, userId: userData.userId, DateTime: formInput.dateTime };
       createAppointment(payload).then((data) => {
-        const patchPayload = { appointmentId: data.id };
+        const patchPayload = { ...formInput, appointmentId: data.id };
         updateAppointment(patchPayload).then(() => router.push('/profile'));
       });
     }
@@ -50,7 +49,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
         <Form.Group className="mb-3">
           <Form.Label>Choose Date</Form.Label>
           <Form.Control
-            type="datetime-local"
+            type="dateTime-local"
             name="dateTime"
             value={formInput.dateTime}
             onChange={handleChange}
@@ -68,11 +67,11 @@ AppointmentForm.propTypes = {
     date: PropTypes.string,
     time: PropTypes.string,
     notes: PropTypes.string,
-    dateTime: PropTypes.string,
+    DateTime: PropTypes.string,
     // time: PropTypes.string,
     // notes: PropTypes string,
     appointmentId: PropTypes.number,
-    userId: PropTypes.number,
+    UserId: PropTypes.number,
   }),
   mentorId: PropTypes.string.isRequired,
 };
