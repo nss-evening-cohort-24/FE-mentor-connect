@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react';
-import getMentors from '../api/mentorData';
+import { getMentors } from '../api/mentorData';
 import MentorCard from '../components/MentorCard';
 
 export default function ShowMentors() {

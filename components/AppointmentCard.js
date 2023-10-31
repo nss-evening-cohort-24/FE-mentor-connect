@@ -3,6 +3,9 @@ import { Card, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 export default function AppointmentCard({ appointmentObj }) {
+  const appointmentDate = new Date(appointmentObj.dateTime);
+  const date = appointmentDate.toLocaleDateString();
+  const time = appointmentDate.toLocaleTimeString();
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <div id="clock">
@@ -10,8 +13,8 @@ export default function AppointmentCard({ appointmentObj }) {
       </div>
       <Card.Body>
         <h6>{appointmentObj.mentor.firstName} {appointmentObj.mentor.lastName}</h6>
-        <h6>{appointmentObj.category.categoryName}</h6>
-        <h6>{appointmentObj.dateTime}</h6><br />
+        <p>Date: {date}</p>
+        <p>Time: {time}</p>
         <Button id="edit">EDIT</Button>
         <Button id="memdel" className="m-2">
           DELETE
