@@ -4,19 +4,20 @@ import { Button, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useAuth } from '../../utils/context/authContext';
 import { createAppointment, updateAppointment } from '../../api/appointmentData';
+import { checkUser } from '../../utils/auth';
 
 const initialState = {
-  date: '',
-  time: '',
-  notes: '',
+  dateTime: '',
 };
 
 export default function AppointmentForm({ mentorId, appointmentObj }) {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [formInput, setFormInput] = useState({ ...initialState, mentorId });
   const router = useRouter();
-
+  // const [, setUser] = useState({});
   useEffect(() => {
+    checkUser(user.uid).then(setUser);
+    console.log(user);
     if (appointmentObj.appointmentId) setFormInput(appointmentObj);
   }, [appointmentObj, user]);
 
@@ -35,7 +36,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
     if (appointmentObj.appointmentId) {
       updateAppointment(formInput).then(() => router.push('/profile'));
     } else {
-      const payload = { ...formInput, uid: user.uid };
+      const payload = { ...formInput, userId: user.userId };
       createAppointment(payload).then(({ name }) => {
         const patchPayload = { appointmentId: name };
         updateAppointment(patchPayload).then(() => router.push('/profile'));
@@ -49,13 +50,13 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
         <Form.Group className="mb-3">
           <Form.Label>Choose Date</Form.Label>
           <Form.Control
-            type="date"
-            name="date"
-            value={formInput.date}
+            type="text"
+            name="dateTime"
+            value={formInput.dateTime}
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        {/* <Form.Group className="mb-3">
           <Form.Label>Choose time</Form.Label>
           <Form.Control
             type="time"
@@ -73,7 +74,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
             value={formInput.notes}
             onChange={handleChange}
           />
-        </Form.Group>
+        </Form.Group> */}
         <Button type="submit">{appointmentObj.appointmentId ? 'Update' : 'Create'} Appointment
         </Button>
       </Form>
@@ -83,10 +84,11 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
 
 AppointmentForm.propTypes = {
   appointmentObj: PropTypes.shape({
-    date: PropTypes.string,
-    time: PropTypes.string,
-    notes: PropTypes.string,
+    dateTime: PropTypes.string,
+    // time: PropTypes.string,
+    // notes: PropTypes.string,
     appointmentId: PropTypes.string,
+    userId: PropTypes.number.isRequired,
   }),
   mentorId: PropTypes.string.isRequired,
 };

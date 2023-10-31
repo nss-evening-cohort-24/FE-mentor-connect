@@ -20,15 +20,28 @@ const getAppointments = () => new Promise((resolve, reject) => {
 });
 
 const createAppointment = (payload) => new Promise((resolve, reject) => {
+  console.log(payload);
   fetch(`${endpoint}/appointments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      Accept: 'application/json',
     },
     body: JSON.stringify(payload),
-  }).then((response) => response.json())
-    .then((data) => resolve(data))
+  })
+    .then(async (res) => {
+      let data;
+      if (res.ok) {
+        data = await res.json();
+        console.log(data);
+        resolve(data);
+      }
+    })
     .catch(reject);
+
+  // .then((response) => console.log(response))
+  // .then((data) => resolve(data))
+  // .catch(reject);
 });
 
 const updateAppointment = (payload) => new Promise((resolve, reject) => {
