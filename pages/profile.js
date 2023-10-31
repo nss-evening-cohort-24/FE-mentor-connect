@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import UserCard from '../components/UserCard';
 import AppointmentCard from '../components/AppointmentCard';
-import getAppointments from '../api/appointmentData';
+import { getAppointments } from '../api/appointmentData';
 
 export default function Profile() {
   const [appointments, SetAppointments] = useState([]);

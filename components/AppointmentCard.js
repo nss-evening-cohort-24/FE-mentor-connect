@@ -10,7 +10,6 @@ export default function AppointmentCard({ appointmentObj }) {
       </div>
       <Card.Body>
         <h6>{appointmentObj.mentor.firstName} {appointmentObj.mentor.lastName}</h6>
-        <h6>{appointmentObj.category.categoryName}</h6>
         <h6>{appointmentObj.dateTime}</h6><br />
         <Button id="edit">EDIT</Button>
         <Button id="memdel" className="m-2">
