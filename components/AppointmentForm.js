@@ -30,10 +30,12 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
       [name]: value,
     }));
   };
+  console.warn('JUSTKIDDING', appointmentObj.id);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (appointmentObj.appointmentId) {
-      updateAppointment(formInput).then(() => router.push('/profile'));
+    if (appointmentObj.id) {
+      const patchPayload = { ...formInput, appointmentId: appointmentObj.id };
+      updateAppointment(patchPayload).then(() => router.push('/profile'));
     } else {
       const payload = { ...formInput, userId: userData.userId, DateTime: formInput.dateTime };
       createAppointment(payload).then((data) => {
@@ -42,7 +44,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
       });
     }
   };
-
+  console.warn('APPOINTMENTOBJ', appointmentObj);
   return (
     <>
       <Form onSubmit={handleSubmit}>
@@ -55,7 +57,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button type="submit">{appointmentObj.appointmentId ? 'Update' : 'Create'} Appointment
+        <Button type="submit">{appointmentObj.id ? 'Update' : 'Create'} Appointment
         </Button>
       </Form>
     </>
@@ -72,6 +74,7 @@ AppointmentForm.propTypes = {
     // notes: PropTypes string,
     appointmentId: PropTypes.number,
     UserId: PropTypes.number,
+    id: PropTypes.number,
   }),
   mentorId: PropTypes.string.isRequired,
 };

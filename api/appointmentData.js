@@ -54,4 +54,39 @@ const updateAppointment = (payload) => new Promise((resolve, reject) => {
   })
     .catch(reject);
 });
-export { getAppointments, createAppointment, updateAppointment };
+
+const deleteSingleAppointment = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/appointments/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(async (res) => {
+      if (res.ok) {
+        resolve();
+      }
+    })
+    .catch(reject);
+});
+
+const getSingleAppointment = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/appointments/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(async (res) => {
+      let data;
+      if (res.ok) {
+        data = await res.json();
+        resolve(data);
+      }
+    })
+    .catch(reject);
+});
+
+export {
+  getAppointments, createAppointment, updateAppointment, deleteSingleAppointment, getSingleAppointment,
+};
