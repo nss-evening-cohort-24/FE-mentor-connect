@@ -56,6 +56,11 @@ justify-content: flex-end;
 #clock {
   margin-right: 2px;
   text-align: center;
+  width: 230px;
+}
+
+#profile {
+  width: 360px;
 }
 
 #mentor-container{
@@ -69,4 +74,29 @@ justify-content: flex-end;
 Card{
   display: flex;
   
+}
+
+#book-appt{
+  background-color: #FFBF86;
+  color: black;
+  border-color: #FFBF86
+}
+
+#book-appt:hover{
+  background-color: #DF7A15;
+  border-color: #DF7A15;
+}
+
+#signout{
+  margin-left: 780px;
+}
+
+#memdel{
+background-color: #B00000;
+border: #B00000;
+}
+
+#edit{
+  background-color: #237FD6;
+  border: #237FD6;
 }

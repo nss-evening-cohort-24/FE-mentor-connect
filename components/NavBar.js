@@ -30,7 +30,7 @@ export default function NavBar() {
               <Link passHref href="/profile">
                 <Nav.Link>My Profile</Nav.Link>
               </Link>
-              <Button variant="danger" onClick={signOut}>Sign Out</Button>
+              <Button variant="danger" id="signout" onClick={signOut}>Sign Out</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

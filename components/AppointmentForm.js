@@ -30,7 +30,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
       [name]: value,
     }));
   };
-  console.warn('JUSTKIDDING', appointmentObj.id);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (appointmentObj.id) {
@@ -44,9 +44,9 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
       });
     }
   };
-  console.warn('APPOINTMENTOBJ', appointmentObj);
+
   return (
-    <>
+    <> <br />
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Choose Date</Form.Label>
@@ -70,8 +70,6 @@ AppointmentForm.propTypes = {
     time: PropTypes.string,
     notes: PropTypes.string,
     DateTime: PropTypes.string,
-    // time: PropTypes.string,
-    // notes: PropTypes string,
     appointmentId: PropTypes.number,
     UserId: PropTypes.number,
     id: PropTypes.number,
