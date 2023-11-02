@@ -17,12 +17,16 @@ export default function Profile() {
   return (
     <><br />
       <div id="profile" className="user-page">
-
-        <h3>My Profile:</h3>
+        <h3>My Profile:</h3><br />
+      </div>
+      <div id="prof2">
         <UserCard />
       </div><br /><br />
-      <h3>My Appointments:</h3>
+
       <div id="apt-container">
+        <h3>My Appointments:</h3>
+      </div>
+      <div id="apts">
         {appointments.map((apt) => (
           <AppointmentCard appointmentObj={apt} key={apt.id} />
         ))}

@@ -8,7 +8,7 @@ import Link from 'next/link';
 // function show the authenticated user's profile info
 export default function MentorCard({ mentorObj }) {
   return (
-    <Card style={{ width: '18rem', margin: '10px', border: '3px solid gold' }}>
+    <Card style={{ width: '18rem', margin: '10px', border: ' 1px solid black' }}>
       <img src="./mentorImg.jpg" alt="user" width="240px" height="150px" className="mentor-display-photo" />
       <Card.Body>
         <h3>{mentorObj.firstName} {mentorObj.lastName}</h3><br />

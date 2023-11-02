@@ -54,37 +54,56 @@ justify-content: flex-end;
 }
 
 #clock {
-  margin-right: 2px;
-  text-align: center;
+  align-self: center;
   width: 230px;
 }
 
+#prof2{
+  display: flex;
+  justify-content: center;
+}
+
 #profile {
-  width: 360px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 #mentor-container{
   display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#ul{
+  justify-content: center;
 }
 
 #apt-container{
   display: flex;
+  justify-content: center;
+}
+
+#apts{
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 Card{
   display: flex;
-  
+  justify-items: center;
 }
 
 #book-appt{
-  background-color: #FFBF86;
-  color: black;
-  border-color: #FFBF86
+  background-color: #2A2A2A;
+  color: white;
+  border-color: #2A2A2A;
 }
 
 #book-appt:hover{
-  background-color: #DF7A15;
-  border-color: #DF7A15;
+  background-color: #8F8F8F;
+  border-color: #8F8F8F;
 }
 
 #signout{
@@ -92,11 +111,31 @@ Card{
 }
 
 #memdel{
-background-color: #B00000;
-border: #B00000;
+background-color: #2A2A2A;
+border: #2A2A2A;
 }
 
 #edit{
-  background-color: #237FD6;
-  border: #237FD6;
+  background-color: #2A2A2A;
+  border: #2A2A2AD6;
+}
+
+#memdel:hover{
+  background-color: #8F8F8F;
+  border-color: #8F8F8F;
+}
+
+#edit:hover{
+  background-color: #8F8F8F;
+  border-color: #8F8F8F;
+}
+
+#submitform{
+  background-color: #2A2A2A;
+  border-color: #2A2A2A
+}
+
+#submitform:hover{
+  background-color: #8F8F8F;
+  border-color: #8F8F8F;
 }
