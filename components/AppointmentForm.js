@@ -49,7 +49,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
   };
 
   return (
-    <> <br />
+    <>
       <Form onSubmit={handleSubmit}>
         <h2>Make an appointment with {mentor.firstName} {mentor.lastName}</h2>
         <Form.Group className="mb-3">
