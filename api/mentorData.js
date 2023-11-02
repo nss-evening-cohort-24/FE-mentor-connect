@@ -28,9 +28,9 @@ const getSingleMentor = (mentorId) => new Promise((resolve, reject) => {
   }).then((response) => response.json())
     .then((data) => {
       if (data) {
-        resolve(Object.values(data));
+        resolve((data));
       } else {
-        resolve([]);
+        resolve({});
       }
     })
     .catch(reject);
