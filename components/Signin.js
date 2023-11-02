@@ -14,7 +14,7 @@ function Signin() {
       }}
     >
       <h1>Hi there!</h1>
-      <p>Click the button below to login!</p>
+      <p>Click the button below to enter Mentor Connect!</p>
       <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
         Sign In
       </Button>

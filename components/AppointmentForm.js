@@ -57,7 +57,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button type="submit">{appointmentObj.id ? 'Update' : 'Create'} Appointment
+        <Button type="submit" id="submitform">{appointmentObj.id ? 'Update' : 'Create'} Appointment
         </Button>
       </Form>
     </>
