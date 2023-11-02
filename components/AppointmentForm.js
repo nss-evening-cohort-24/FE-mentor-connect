@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useAuth } from '../utils/context/authContext';
 import { createAppointment, updateAppointment } from '../api/appointmentData';
 import { checkUser } from '../utils/auth';
+import { getSingleMentor } from '../api/mentorData';
 
 const initialState = {
   dateTime: '',
@@ -15,13 +16,15 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
   const [formInput, setFormInput] = useState({ ...initialState, mentorId });
   const router = useRouter();
   const [userData, setUser] = useState({});
+  const [mentor, setMentor] = useState({});
 
   useEffect(() => {
+    getSingleMentor(mentorId).then(setMentor);
     checkUser(user.uid).then((data) => {
       setUser(data);
     });
     if (appointmentObj.appointmentId) setFormInput(appointmentObj);
-  }, [appointmentObj, user]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,6 +51,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
   return (
     <> <br />
       <Form onSubmit={handleSubmit}>
+        <h2>Make an appointment with {mentor.firstName} {mentor.lastName}</h2>
         <Form.Group className="mb-3">
           <Form.Label>Choose Date</Form.Label>
           <Form.Control
@@ -57,7 +61,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button type="submit" id="submitform">{appointmentObj.id ? 'Update' : 'Create'} Appointment
+        <Button type="submit">{appointmentObj.id ? 'Update' : 'Create'} Appointment
         </Button>
       </Form>
     </>
