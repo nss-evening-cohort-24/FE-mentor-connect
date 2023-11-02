@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import meeting from '../public/meeting.jpg';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
-  const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
+  const { user } = useAuth();
   return (
     <div id="home">
       <h4 id="greeting">Hello {user.displayName}! </h4>
@@ -17,11 +16,11 @@ function Home() {
         </div>
       </div>
       <div id="page-bottom">
-        <img src={meeting} alt="two people meeting" />
+        <img src="/mentoring.jpg" style={{ height: '190px', width: '250px' }} alt="two people meeting" />
         <p className="text-block-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis.</p>
-        <img src={meeting} alt="two people meeting" />
+        <img src="/mentors2.jpg" style={{ height: '190px', width: '260px' }} alt="two people meeting" />
         <p className="text-block-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis.</p>
-        <img src={meeting} alt="two people meeting" />
+        <img src="/mentors3.jpg" style={{ height: '190px', width: '250px' }} alt="two people meeting" />
         <p className="text-block-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis.</p>
       </div>
     </div>

@@ -7,14 +7,12 @@ import Link from 'next/link';
 
 // function show the authenticated user's profile info
 export default function MentorCard({ mentorObj }) {
-  console.warn(mentorObj);
   return (
     <Card style={{ width: '18rem', margin: '10px', border: '3px solid gold' }}>
-      {/* <img src={mentorImg} alt="user" width="100px" height="100px" className="user-display-photo" /> */}
-      <img src="./mentorImg.jpg" alt="user" width="100px" height="100px" className="mentor-display-photo" />
+      <img src="./mentorImg.jpg" alt="user" width="240px" height="150px" className="mentor-display-photo" />
       <Card.Body>
         <h3>{mentorObj.firstName} {mentorObj.lastName}</h3><br />
-        <h6 className="mentor-info"><b>Bio:</b> {mentorObj.bio}</h6>
+        <h6 className="mentor-info"><b>Bio:</b> {mentorObj.bio}</h6><br />
         <h6 className="mentor-info"><b>Areas of Expertise:</b>
           {mentorObj.categories.map((cat) => (
             <ul>
