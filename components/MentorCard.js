@@ -2,17 +2,17 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Image } from 'react-bootstrap';
 import Link from 'next/link';
 
 // function show the authenticated user's profile info
 export default function MentorCard({ mentorObj }) {
   return (
-    <Card style={{ width: '18rem', margin: '10px', border: ' 1px solid black' }}>
-      <img src="./mentorImg.jpg" alt="user" width="240px" height="150px" className="mentor-display-photo" />
+    <Card id="mentor-card" style={{ width: '18rem', margin: '10px' }}>
+      <Image src={`./${mentorObj.mentorId}.jpg`} alt="mentor" height="250px" className="mentor-display-photo" roundedCircle />
       <Card.Body>
-        <h3>{mentorObj.firstName} {mentorObj.lastName}</h3><br />
-        <h6 className="mentor-info"><b>Bio:</b> {mentorObj.bio}</h6><br />
+        <h3 className="serif">{mentorObj.firstName} {mentorObj.lastName}</h3><br />
+        <p className="mentor-info">{mentorObj.bio}</p><br />
         <h6 className="mentor-info"><b>Areas of Expertise:</b>
           {mentorObj.categories.map((cat) => (
             <ul>

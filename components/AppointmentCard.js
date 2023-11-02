@@ -6,7 +6,7 @@ import { deleteSingleAppointment } from '../api/appointmentData';
 
 export default function AppointmentCard({ appointmentObj }) {
   const deleteThisAppointment = () => {
-    if (window.confirm(`Remove ${appointmentObj.id}?`)) {
+    if (window.confirm(`Cancel appointment with ${appointmentObj.mentor.firstName}?`)) {
       console.warn(appointmentObj.id);
       deleteSingleAppointment(appointmentObj.id).then(() => window.location.reload());
     }
@@ -25,12 +25,14 @@ export default function AppointmentCard({ appointmentObj }) {
         <h6>{appointmentObj.mentor.firstName} {appointmentObj.mentor.lastName}</h6>
         <p>Date: {date}</p>
         <p>Time: {time}</p>
-        <Link href={`/appointment/edit/${appointmentObj.id}`} passHref>
-          <Button id="edit">EDIT</Button>
-        </Link>
-        <Button id="memdel" className="m-2" onClick={deleteThisAppointment}>
-          DELETE
-        </Button>
+        <div>
+          <Link href={`/appointment/edit/${appointmentObj.id}`} passHref>
+            <Button id="edit">EDIT</Button>
+          </Link>
+          <Button id="memdel" className="m-2" onClick={deleteThisAppointment}>
+            DELETE
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

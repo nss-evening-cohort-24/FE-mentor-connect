@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text');
 
 html,
 body {
@@ -58,15 +59,19 @@ justify-content: flex-end;
   width: 230px;
 }
 
+#profile-pg{
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
 #prof2{
   display: flex;
-  justify-content: center;
+  margin-top: 10px;
 }
 
 #profile {
   display: flex;
-  justify-content: center;
-  text-align: center;
 }
 
 #mentor-container{
@@ -75,24 +80,27 @@ justify-content: flex-end;
   justify-content: center;
 }
 
-#ul{
+ul{
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 #apt-container{
   display: flex;
-  justify-content: center;
+  margin-left: 10px;
+  margin-top: 30px;
+
+}
+
+.mentor-display-photo{
+  object-fit: cover;
 }
 
 #apts{
   display: flex;
   justify-content: center;
   text-align: center;
-}
-
-Card{
-  display: flex;
-  justify-items: center;
 }
 
 #book-appt{
@@ -118,6 +126,7 @@ border: #2A2A2A;
 #edit{
   background-color: #2A2A2A;
   border: #2A2A2AD6;
+  margin: 8px;
 }
 
 #memdel:hover{
@@ -138,4 +147,42 @@ border: #2A2A2A;
 #submitform:hover{
   background-color: #8F8F8F;
   border-color: #8F8F8F;
+}
+
+Form{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.serif{
+  font-family: DM Serif Text
+}
+
+#meet{
+  margin: 50px;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#left{
+  margin-right: 10px;
+}
+
+#right{
+  margin-left: 10px;
 }
