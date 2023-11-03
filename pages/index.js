@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import { useAuth } from '../utils/context/authContext';
 
@@ -8,8 +9,8 @@ function Home() {
       <h4 id="greeting" className="serif">Hello {user.displayName}! </h4>
       <div id="page-top">
         <div>
-          <h1 className="serif">About Our Organization</h1>
-          <p className="text-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis. Integer vitae justo eget magna fermentum. Facilisi etiam dignissim diam quis enim. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Urna duis convallis convallis tellus id interdum. Ultricies integer .</p>
+          <h1 className="serif">About Mentor Connect</h1>
+          <p className="text-block">Our mentoring programs often facilitate networking opportunities, allowing mentees to connect with professionals and leaders in their field. This exposure can be particularly beneficial for individuals who may not have access to established networks or connections. By building these relationships, mentees gain access to valuable resources, career opportunities, and support systems.<br /><br /> Learn more about finding a mentor by clicking <a href="/mentors"><b>here</b></a>.</p>
         </div>
         <div>
           <img src="/meeting.jpg" style={{ height: '300px' }} alt="two people meeting" />
@@ -17,9 +18,9 @@ function Home() {
       </div>
       <div id="page-bottom">
         <img src="/mentoring.jpg" style={{ height: '190px', width: '250px' }} alt="two people meeting" />
-        <p className="text-block-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis.</p>
+        <p className="text-block-small"><b>Matching:</b> Mentees are carefully matched with mentors based on their specific needs, goals, interests, and backgrounds.</p>
         <img src="/mentors2.jpg" style={{ height: '190px' }} alt="two people meeting" />
-        <p className="text-block-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sed libero enim sed faucibus turpis.</p>
+        <p className="text-block-small"><b>Skill Development:</b> A mentor can help acquire the skills to overcome barriers and achieve goals, regardless of background or starting point.</p>
         <img src="/mentors3.jpg" style={{ height: '190px', width: '300px' }} alt="two people meeting" />
       </div>
     </div>
