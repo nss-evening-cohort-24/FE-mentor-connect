@@ -51,9 +51,9 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <h2>Make an appointment with {mentor.firstName} {mentor.lastName}</h2>
+        <h2>Make an appointment with {mentor.firstName} {mentor.lastName}</h2><br />
         <Form.Group className="mb-3">
-          <Form.Label>Choose Date</Form.Label>
+          <Form.Label>Choose Date:</Form.Label>
           <Form.Control
             type="dateTime-local"
             name="dateTime"
@@ -61,7 +61,7 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button type="submit">{appointmentObj.id ? 'Update' : 'Create'} Appointment
+        <Button type="submit" id="createapt">{appointmentObj.id ? 'Update' : 'Create'} Appointment
         </Button>
       </Form>
     </>
