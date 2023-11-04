@@ -9,7 +9,7 @@ export default function UserCard() {
 
   return (
     <>
-      <Card>
+      <Card><br />
         <img src={user.photoURL} alt="user" width="100px" height="100px" className="user-display-photo" />
         <Card.Body>
           <h6 className="user-info"><b>Username:</b><br />{user.displayName}</h6>

@@ -163,6 +163,8 @@ Form{
   max-width: 50%;
   justify-content: center;
   margin-top: 50px;
+  align-items: center;
+  text-align: center;
 }
 
 .serif{
@@ -201,4 +203,37 @@ Nav{
 
 b{
   color: rgba(70, 1, 155, 0.777);
+}
+
+.signin{
+  display: flex;
+  justify-content: center;
+}
+
+#login-btn{
+  background-color: rgba(70, 1, 155, 0.777);
+  border-color: rgba(70, 1, 155, 0.777);
+  width: 50%;
+  align-self: center;
+}
+
+#login-btn:hover {
+  border-color: #8F8F8F;
+  background-color: #8f8f8f;
+}
+
+#logo{
+  justify-content: center;
+  align-self: center;
+}
+
+#createapt{
+  background-color: rgba(70, 1, 155, 0.777);
+  border-color: rgba(70, 1, 155, 0.777);
+  width: 40%;
+}
+
+#createapt:hover{
+  background-color: #8F8F8F;
+  border-color: #8F8F8F;
 }
