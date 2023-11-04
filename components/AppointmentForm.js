@@ -51,7 +51,9 @@ export default function AppointmentForm({ mentorId, appointmentObj }) {
   return (
     <>
       <Form onSubmit={handleSubmit}>
-        <h2>Make an appointment with {mentor.firstName} {mentor.lastName}</h2><br />
+        {appointmentObj.id
+          ? <h2>Edit your appointment with {appointmentObj.mentor.firstName} {appointmentObj.mentor.lastName}</h2>
+          : <h2>Make an appointment with {mentor.firstName} {mentor.lastName}</h2>}
         <Form.Group className="mb-3">
           <Form.Label>Choose Date:</Form.Label>
           <Form.Control
@@ -77,8 +79,14 @@ AppointmentForm.propTypes = {
     appointmentId: PropTypes.number,
     UserId: PropTypes.number,
     id: PropTypes.number,
+    mentor: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+
+    }),
   }),
   mentorId: PropTypes.string.isRequired,
+
 };
 AppointmentForm.defaultProps = {
   appointmentObj: initialState,

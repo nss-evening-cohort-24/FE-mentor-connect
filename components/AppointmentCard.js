@@ -30,7 +30,7 @@ export default function AppointmentCard({ appointmentObj }) {
             <Button id="edit">EDIT</Button>
           </Link>
           <Button id="memdel" className="m-2" onClick={deleteThisAppointment}>
-            DELETE
+            CANCEL
           </Button>
         </div>
       </Card.Body>

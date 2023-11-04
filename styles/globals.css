@@ -110,7 +110,7 @@ ul{
 #book-appt{
   background-color: rgba(70, 1, 155, 0.777);
   color: white;
-  border-color: #2A2A2A;
+  border-color: rgba(70, 1, 155, 0.777);
 }
 
 #book-appt:hover{
@@ -128,8 +128,8 @@ border: #2A2A2A;
 }
 
 #edit{
-  background-color: #2A2A2A;
-  border: #2A2A2AD6;
+  background-color: rgba(70, 1, 155, 0.777);
+  border: rgba(70, 1, 155, 0.777);
   margin: 8px;
 }
 
