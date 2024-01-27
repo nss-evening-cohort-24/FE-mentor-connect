@@ -103,8 +103,8 @@ ul{
 
 #apts{
   display: flex;
-  justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 #book-appt{
@@ -190,11 +190,11 @@ Form{
 }
 
 #left{
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 #right{
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 Nav{

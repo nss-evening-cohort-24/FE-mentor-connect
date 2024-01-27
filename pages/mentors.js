@@ -18,7 +18,7 @@ export default function ShowMentors() {
     <>
       <div>
         <h1 id="meet" className="serif">Meet Our Mentors</h1>
-        <div id="mentor-container" className="mentor-page">
+        <div id="mentor-container">
           {mentors.map((mentor) => (
             <MentorCard key={mentor.mentorId} mentorObj={mentor} onUpdate={getAllMentors} />
           ))}
