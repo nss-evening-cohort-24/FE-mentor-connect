@@ -1,8 +1,6 @@
-# Mentor Connect  [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://mentorship-connect.netlify.app/)
+# Mentor Connect
 
 Mentor Connect is a space where anyone seeking guidance in their professional career can connect with experienced mentors based on their varying areas of expertise by booking appointments.
-
-[View App](https://mentorship-connect.netlify.app/)
 
 ## About the User
 - The ideal user for this application is a young professional seeking mentorship in their career.
@@ -14,6 +12,15 @@ Mentor Connect is a space where anyone seeking guidance in their professional ca
 - From here, the user can browse available mentors and book an appointment with them.
 - Once an appointment is booked, the user is directed to their profile page which will display profile information, along with all appointments the user has booked. 
 - From here, the user can also update or cancel (delete) their appointments if necessary.
+
+## Setup
+- clone backend repo (https://github.com/cloverww04/MentorshipProgram)
+- clone this repo 
+- run Visual Studio and VSCode
+- run 'dotnet ef database update' in file terminal
+- start https server
+- npm run dev in vsCode
+- sign in!
 
 ## Video Walkthrough of Mentor Connect
 
